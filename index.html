@@ -16,41 +16,35 @@
         /* Remove margins from "page content" on small screens */
         @media only screen and (max-width: 600px) {#main {margin-left: 0}}
     </style>
-    <script type="text/javascript" src="../data/data-fake.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
 <body class="w3-light-grey">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="https://wallpaperplay.com/walls/full/d/b/c/137812.jpg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-image w3-xxlarge"></i>
-    <p>PHOTOS</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-</nav>
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-bottom w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-white w3-hover-opacity-off w3-center w3-tiny">
-    <a href="#" class="w3-bar-item w3-button" style="width:20% !important"><i class="fa fa-home w3-xlarge"></i><p style="margin:0;">HOME</p></a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:20% !important"><i class="fa fa-user w3-xlarge"></i><p style="margin:0;">ABOUT</p></a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:20% !important"><i class="fa fa-image w3-xlarge"></i><p style="margin:0;">PHOTOS</p></a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:20% !important"><i class="fa fa-envelope w3-xlarge"></i><p style="margin:0;">CONTACT</p></a>
-      <a href="#" class="w3-bar-item w3-button" style="width:20% !important"><i class="fa fa-ellipsis-h w3-xlarge"></i><p style="margin:0;">MORE</p></a>
-  </div>
+<div id="navigator-bar">
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <img data-bind="attr: { src: imgAvatar }" style="width:100%"/>
+        <div data-template="tpl-navbar-item" data-bind="source: dataNavigator"></div>
+    </nav>
+    <script id="tpl-navbar-item" type="text/x-kendo-template">
+        <a data-bind="attr: { href: url }" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa w3-xxlarge" data-bind="attr: { class: icon }, css: {fa: isLarge, w3-xxlarge: isLarge }"></i>
+            <p data-bind="text: name"></p>
+        </a>
+    </script>
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-bottom w3-hide-large w3-hide-medium">
+        <div class="w3-bar w3-white w3-hover-opacity-off w3-center w3-tiny" data-template="tpl-mobile-navbar-item" data-bind="source: dataNavigator"></div>
+    </div>
+    <script id="tpl-mobile-navbar-item" type="text/x-kendo-template">
+        <a data-bind="attr: { href: url }" class="w3-bar-item w3-button" style="width:20% !important">
+            <i class="fa w3-xlarge" data-bind="attr: { class: icon }, css: {fa: isMobile, w3-xlarge: isMobile }"></i>
+            <p style="margin:0;" data-bind="text: name"></p>
+        </a>
+    </script>
 </div>
+
 
 <!-- Page Content -->
 <div class="w3-padding-large" id="main">
@@ -221,6 +215,6 @@
 
 <!-- END PAGE CONTENT -->
 </div>
-
 </body>
+    <script type="text/javascript" src="binddata.js"></script>
 </html>
