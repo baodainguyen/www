@@ -2,8 +2,8 @@ var navigation = {
     "avatar" : "http://cdn.collider.com/uploads/imagegallery/iron_man_movie/iron_man_movie_image.jpg",
     "navbar" :  
         [
-            { "url" : "#"  , "icon": "fa-home", "name" : "Home"},
-            { "url" : "#about"  , "icon": "fa-user", "name" : "About"},
+            { "url" : "https://raw.githubusercontent.com/baodainguyen/www/master/test/test-page-content.html"  , "icon": "fa-home", "name" : "Home"},
+            { "url" : "https://raw.githubusercontent.com/baodainguyen/www/master/technical.html"  , "icon": "fa-user", "name" : "About"},
             { "url" : "#photos"  , "icon": "fa-image", "name" : "Photos"},
             { "url" : "#contact"  , "icon": "fa-envelope", "name" : "Contact"},
             { "url" : "#"  , "icon": "fa-ellipsis-h", "name" : "More"}
@@ -27,21 +27,21 @@ function controlNav(){
     var iphoneNav = $('#navigator-bar div.w3-bar').children();
     ipadNav.each(function(index) {
         $(this).click(function(){
-            // call Ajax
-            removeAllSelector();
+            loadAndRemoveAllSelector(this);
             $(this).addClass('w3-black');
             $(iphoneNav[index]).addClass('w3-black');
         });
     });
     iphoneNav.each(function(index) {
         $(this).click(function(){
-            // call Ajax
-            removeAllSelector();
+            loadAndRemoveAllSelector(this);
             $(this).addClass('w3-black');
             $(ipadNav[index]).addClass('w3-black');
         });
     });
-    function removeAllSelector(){
+    function loadAndRemoveAllSelector(selector){
+        var url = $(selector).attr('loadhref');
+        $('#main-page-content').load(url);
         iphoneNav.each(function() { $(this).removeClass('w3-black'); });
         ipadNav.each(function() { $(this).removeClass('w3-black'); });
     };
