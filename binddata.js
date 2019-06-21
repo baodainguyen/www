@@ -11,6 +11,7 @@ var navigation = {
 };
 $(document).ready(function(){
     bindView();
+    controlNav();
 });
 function bindView(){
     var viewModel = kendo.observable({
@@ -20,4 +21,28 @@ function bindView(){
         isMobile: true
 	});
 	kendo.bind($("#navigator-bar"), viewModel);
+};
+function controlNav(){
+    var ipadNav = $('#navigator-bar > nav > div').children();
+    var iphoneNav = $('#navigator-bar div.w3-bar').children();
+    ipadNav.each(function(index) {
+        $(this).click(function(){
+            // call Ajax
+            removeAllSelector();
+            $(this).addClass('w3-black');
+            $(iphoneNav[index]).addClass('w3-black');
+        });
+    });
+    iphoneNav.each(function(index) {
+        $(this).click(function(){
+            // call Ajax
+            removeAllSelector();
+            $(this).addClass('w3-black');
+            $(ipadNav[index]).addClass('w3-black');
+        });
+    });
+    function removeAllSelector(){
+        iphoneNav.each(function() { $(this).removeClass('w3-black'); });
+        ipadNav.each(function() { $(this).removeClass('w3-black'); });
+    };
 };
