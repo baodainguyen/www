@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <title>DaiNB</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@
 <div id="navigator-bar">
     <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
         <!-- Avatar image in top left corner -->
-        <img data-bind="attr: { src: imgAvatar }" style="width:100%"/>
+        <img src="" data-bind="attr: { src: imgAvatar }" alt="avatar" style="width:100%"/>
         <div data-template="tpl-navbar-item" data-bind="source: dataNavigator"></div>
     </nav>
     <script id="tpl-navbar-item" type="text/x-kendo-template">
@@ -215,6 +215,6 @@
 
 <!-- END PAGE CONTENT -->
 </div>
+    <script src="binddata.js"></script>
 </body>
-    <script type="text/javascript" src="binddata.js"></script>
 </html>
