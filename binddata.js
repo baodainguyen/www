@@ -5,7 +5,7 @@ var navigation = {
             { "url" : "https://raw.githubusercontent.com/baodainguyen/www/master/test/test-page-content.html"  , "icon": "fa-home", "name" : "Home", "type": "loadpage"},
             { "url" : "https://raw.githubusercontent.com/baodainguyen/www/master/technical.html"  , "icon": "fa-code", "name" : "Projects", "type": "loadpage"},
             { "url" : "load-gallery"  , "icon": "fa-image", "name" : "Gallery", "type": "loadpage"},
-            { "url" : "load-about"  , "icon": "fa-gg", "name" : "Technic", "type": "loadpage"},
+            { "url" : "https://raw.githubusercontent.com/baodainguyen/www/master/load/technical.html"  , "icon": "fa-gg", "name" : "Technic", "type": "loadpage"},
             { "url" : "http://www.load-more-contact-knowledges"  , "icon": "fa-ellipsis-h", "name" : "More", "type": "newpage"}
         ]
 };
