@@ -6,7 +6,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 #navbar-desktop > div {margin:auto;max-width:1010px;}
 #navbar-desktop a.w3-bar-item {height: 50px; padding-top: 15px;}
 #navbar-phone p {margin:0;}
-#navbar-phone a {width:20% !important;}
+#navbar-phone a {width:20% !important;padding-left:0;padding-right:0;}
 .logo-icon {font-size: 30px; transform: rotate(-45deg);  -ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); margin-top: 5px;}
 #navbar-desktop .logo-icon {margin-top: -5px;}
 #navbar-tablet .logo-icon {font-size: 50px;}

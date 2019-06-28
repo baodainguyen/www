@@ -10,43 +10,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/style.css">
   </head>  
-  <body class="w3-black">
+  <body>
     <!-- Navbar (sit on top) -->
     <div class="w3-top w3-hide-medium w3-hide-small">
       <div class="w3-bar" id="navbar-desktop">
         <div>
-          <a class="w3-bar-item w3-button" href="#">
+          <a href="#" class="w3-bar-item">
             <i class="fa logo-icon">&#xf14c;</i>
           </a>
-          <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
-          <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-          <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-          <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+          <a href="#home" class="w3-bar-item w3-button">
+            <i class="fa fa-home"></i> HOME
+          </a>
+          <a href="#about" class="w3-bar-item w3-button w3-hide-small">
+            <i class="fa fa-user"></i> ABOUT
+          </a>
+          <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small">
+            <i class="fa fa-briefcase"></i> PORTFOLIO
+          </a>
+          <a href="#contact" class="w3-bar-item w3-button w3-hide-small">
+            <i class="fa fa-th"></i> PROJECTS
+          </a>
         </div>        
       </div>
     </div>
     <!-- Navbar (Sidebar - hidden on small screens) -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-large w3-hide-small w3-center" id="navbar-tablet">
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-large w3-hide-small w3-center w3-black" id="navbar-tablet">
       <a class="w3-bar-item" href="#">
         <i class="fa logo-icon">&#xf14c;</i>
       </a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white">
         <i class="fa fa-home w3-xxlarge"></i><p>HOME</p>
       </a>
-      <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+      <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-white">
         <i class="fa fa-user w3-xxlarge"></i><p>ABOUT</p>
       </a>
-      <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-eye w3-xxlarge"></i><p>PHOTOS</p>
+      <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-white">
+        <i class="fa fa-briefcase w3-xxlarge"></i><p>PORTFOLIO</p>
       </a>
-      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-envelope w3-xxlarge"></i><p>CONTACT</p>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-white">
+        <i class="fa fa-th w3-xxlarge"></i><p>PROJECTS</p>
       </a>
     </nav>
     <!-- Navbar on small screens (Hidden on medium and large screens) -->
     <div class="w3-bottom w3-hide-large w3-hide-medium" id="navbar-phone">
       <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small w3-light-grey">
-        <a href="#" class="w3-bar-item w3-button">
+        <a href="#" class="w3-bar-item">
           <i class="fa logo-icon">&#xf14c;</i>
         </a>
         <a href="#" class="w3-bar-item w3-button">
@@ -56,10 +64,10 @@
           <i class="fa fa-user w3-xlarge"></i><p>ABOUT</p>
         </a>
         <a href="#photos" class="w3-bar-item w3-button">
-          <i class="fa fa-eye w3-xlarge"></i><p>PHOTOS</p>
+          <i class="fa fa-briefcase w3-xlarge"></i><p>PORTFOLIO</p>
         </a>
         <a href="#contact" class="w3-bar-item w3-button">
-          <i class="fa fa-envelope w3-xlarge"></i><p>CONTACT</p>
+          <i class="fa fa-th w3-xlarge"></i><p>PROJECTS</p>
         </a>
       </div>
     </div>
@@ -67,21 +75,21 @@
     <!-- Page Content -->
     <div class="w3-padding-large" id="main-content">
       <!-- Header/Home -->
-      <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+      <header class="w3-container w3-padding-32 w3-center" id="home">
         <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> John Doe.</h1>
         <p>Photographer and Web Designer.</p>
-        <img src="/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108">
+        <img alt="headimg" class="w3-image" width="992" src="http://cdn.collider.com/uploads/imagegallery/iron_man_movie/iron_man_movie_image.jpg">
       </header>
 
       <!-- About Section -->
       <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-        <h2 class="w3-text-light-grey">My Name</h2>
+        <h2 class="w3-text-light-black">My Name</h2>
         <hr style="width:200px" class="w3-opacity">
         <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
           ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
           adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
-        <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+        <h3 class="w3-padding-16 w3-text-light-black">My Skills</h3>
         <p class="w3-wide">Photography</p>
         <div class="w3-white">
           <div class="w3-dark-grey" style="height:28px;width:95%"></div>
@@ -95,7 +103,7 @@
           <div class="w3-dark-grey" style="height:28px;width:80%"></div>
         </div><br>
 
-        <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+        <div class="w3-row w3-center w3-padding-16 w3-section">
           <div class="w3-quarter w3-section">
             <span class="w3-xlarge">11+</span><br>
             Partners
@@ -119,11 +127,11 @@
         </button>
 
         <!-- Grid for pricing tables -->
-        <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+        <h3 class="w3-padding-16 w3-text-grey">My Price</h3>
         <div class="w3-row-padding" style="margin:0 -16px">
           <div class="w3-half w3-margin-bottom">
             <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-              <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+              <li class="w3-green w3-xlarge w3-padding-32">Basic</li>
               <li class="w3-padding-16">Web Design</li>
               <li class="w3-padding-16">Photography</li>
               <li class="w3-padding-16">5GB Storage</li>
@@ -132,7 +140,7 @@
                 <h2>$ 10</h2>
                 <span class="w3-opacity">per month</span>
               </li>
-              <li class="w3-light-grey w3-padding-24">
+              <li class="w3-light-green w3-padding-24">
                 <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
               </li>
             </ul>
@@ -140,7 +148,7 @@
 
           <div class="w3-half">
             <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-              <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+              <li class="w3-xlarge w3-padding-32 w3-indigo">Pro</li>
               <li class="w3-padding-16">Web Design</li>
               <li class="w3-padding-16">Photography</li>
               <li class="w3-padding-16">50GB Storage</li>
@@ -149,7 +157,7 @@
                 <h2>$ 25</h2>
                 <span class="w3-opacity">per month</span>
               </li>
-              <li class="w3-light-grey w3-padding-24">
+              <li class="w3-blue w3-padding-24">
                 <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
               </li>
             </ul>
@@ -158,12 +166,12 @@
         </div>
 
         <!-- Testimonials -->
-        <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
-        <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+        <h3 class="w3-padding-24 w3-text-grey">My Reputation</h3>  
+        <img alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px" src="https://lumiere-a.akamaihd.net/v1/images/file_8842fa4b.jpeg">
         <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
         <p>Jane Doe saved us from a web disaster.</p><br>
 
-        <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+        <img alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2018/05/jkhgljhkjljhk97985784982.jpg">
         <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
         <p>No one is better than Jane Doe.</p>
       <!-- End About Section -->
@@ -171,22 +179,22 @@
 
       <!-- Portfolio Section -->
       <div class="w3-padding-64 w3-content" id="photos">
-        <h2 class="w3-text-light-grey">My Photos</h2>
+        <h2 class="w3-text-grey">Nice Photos</h2>
         <hr style="width:200px" class="w3-opacity">
 
         <!-- Grid for photos -->
         <div class="w3-row-padding" style="margin:0 -16px">
           <div class="w3-half">
-            <img src="/w3images/wedding.jpg" style="width:100%">
-            <img src="/w3images/rocks.jpg" style="width:100%">
-            <img src="/w3images/sailboat.jpg" style="width:100%">
+            <img style="width:100%" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2017/04/BansheeFEATUREFINAL.jpg">
+            <img style="width:100%" src="https://cdn2.lamag.com/wp-content/uploads/sites/6/2019/04/avengers-endgame-disney-1068x601.jpg">
+            <img style="width:100%" src="https://fever.imgix.net/plan/photo/57a87d3a-345b-11e9-9d09-067dfd978c4d.jpg">
+            <img style="width:100%" src="https://cdn1.bigcommerce.com/server4500/0fd9c/product_images/uploaded_images/marvel-super-heroes.jpg">
           </div>
 
           <div class="w3-half">
-            <img src="/w3images/underwater.jpg" style="width:100%">
-            <img src="/w3images/chef.jpg" style="width:100%">
-            <img src="/w3images/wedding.jpg" style="width:100%">
-            <img src="/w3images/p6.jpg" style="width:100%">
+            <img style="width:100%" src="https://cdn.europosters.eu/image/750/julisteet/spider-man-homecoming-hang-i48035.jpg">
+            <img style="width:100%" src="https://www.screengeek.net/wp-content/uploads/2017/12/marvel-cinematic-universe.jpg">
+            <img style="width:100%" src="https://pbs.twimg.com/media/D2zQfRbUcAAKsQO?format=jpg">
           </div>
         <!-- End photo grid -->
         </div>
@@ -195,13 +203,13 @@
 
       <!-- Contact Section -->
       <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-        <h2 class="w3-text-light-grey">Contact Me</h2>
+        <h2 class="w3-text-grey">Contact Me</h2>
         <hr style="width:200px" class="w3-opacity">
 
         <div class="w3-section">
-          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+          <p><i class="fa fa-map-marker fa-fw w3-text-green w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+          <p><i class="fa fa-phone fa-fw w3-text-blue w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+          <p><i class="fa fa-envelope fa-fw w3-text-orange w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
         </div><br>
         <p>Lets get in touch. Send me a message:</p>
 
@@ -220,7 +228,7 @@
       </div>
 
         <!-- Footer -->
-      <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+      <footer class="w3-content w3-padding-64 w3-text-blue w3-xlarge">
         <i class="fa fa-facebook-official w3-hover-opacity"></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
         <i class="fa fa-snapchat w3-hover-opacity"></i>
