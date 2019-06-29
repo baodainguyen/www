@@ -5,6 +5,6 @@ function myFunction() {
     if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
         navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
     } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", " w3-text-white");
     }
 };

@@ -11,10 +11,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 #navbar-desktop .logo-icon {margin-top: -5px;}
 #navbar-tablet .logo-icon {font-size: 50px;}
 #navbar-phone .logo-icon {font-size: 36px;}
-@media only screen and (max-width: 993px) {
-  #navbar-desktop {padding-left: 130px;}
-  #main-content {margin-left: 120px;}
-}
+@media only screen and (min-width: 992px) {#main-content > div {padding-left:0 !important;padding-right:0 !important;}}
+@media only screen and (max-width: 993px) {#navbar-desktop {padding-left: 130px;} #main-content {margin-left: 120px;}}
 @media only screen and (max-width: 768px) {#main-content {margin-left: 120px;}}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main-content {margin-left: 0}}
