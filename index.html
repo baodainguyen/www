@@ -226,6 +226,10 @@
           <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
           <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
           <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" name="Message"></p>
+          <fieldset class="honeypot-field">
+            <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+            <input id="honeypot" type="text" name="honeypot" value="" />
+          </fieldset>
           <p>
             <button class="w3-button w3-light-grey w3-padding-large" type="submit">
               <i class="fa fa-paper-plane"></i> SEND MESSAGE

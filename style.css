@@ -17,3 +17,4 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 @media only screen and (max-width: 768px) {#main-content {margin-left: 120px;}}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main-content {margin-left: 0}}
+.honeypot-field {display: none;}
