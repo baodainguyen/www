@@ -3,6 +3,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Set the width of the sidebar to 120px */
 .w3-sidebar {width: 120px;background: #222;}
 #main-content {margin-left: 0;}
+#navbar-desktop {background-color: rgba(0, 0, 0, 0.05);}
 #navbar-desktop > div {margin:auto;max-width:1010px;}
 #navbar-desktop a.w3-bar-item {height: 50px; padding-top: 15px;}
 #navbar-phone p {margin:0;}
