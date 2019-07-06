@@ -1,35 +1,51 @@
-
-<div class="container" id="technical-stack">
-  <h2>Technical Stack</h2>
-  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>    
-  <table class="table table-striped">
-      <thead data-template="template-table-head" data-bind="source: tablehead"></thead>
-      <tbody data-template="template-table-body" data-bind="source: tablebody"></tbody>
-    </table> 
-</div>
-<div class="container" id="package-manager">
-  <h2>Package Manager</h2>         
-  <table class="table table-striped">
-      <thead data-template="template-table-head" data-bind="source: tablehead"></thead>
-      <tbody data-template="template-table-body" data-bind="source: tablebody"></tbody>
-    </table>  
-</div>
-<script id="template-table-head" type="text/x-kendo-template">
-      <tr>
-        <th scope="col" data-bind="text: col1"></th>
-        <th scope="col" data-bind="text: col2"></th>
-        <th scope="col" data-bind="text: col3"></th>
-        <th scope="col" data-bind="text: col4"></th>
-        <th scope="col" data-bind="text: col5"></th>
-      </tr>
-  </script>
-  <script id="template-table-body" type="text/x-kendo-template">
-      <tr>
-        <th scope="row" data-bind="text: col1"></th>
-        <td data-bind="text: col2"></td>
-        <td data-bind="text: col3"></td>
-        <td data-bind="text: col4"></td>
-        <td data-bind="text: col5"></td>
-      </tr>
-  </script>    
-<script src="/bindview.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DaiNB</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+  </head>  
+  <body>
+    <div class="container" id="technical-stack">
+      <h2>Technical Stack</h2>
+      <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>    
+      <table class="table table-striped">
+          <thead data-template="template-table-head" data-bind="source: tablehead"></thead>
+          <tbody data-template="template-table-body" data-bind="source: tablebody"></tbody>
+        </table> 
+    </div>
+    <div class="container" id="package-manager">
+      <h2>Package Manager</h2>         
+      <table class="table table-striped">
+          <thead data-template="template-table-head" data-bind="source: tablehead"></thead>
+          <tbody data-template="template-table-body" data-bind="source: tablebody"></tbody>
+        </table>  
+    </div>
+    <script id="template-table-head" type="text/x-kendo-template">
+          <tr>
+            <th scope="col" data-bind="text: col1"></th>
+            <th scope="col" data-bind="text: col2"></th>
+            <th scope="col" data-bind="text: col3"></th>
+            <th scope="col" data-bind="text: col4"></th>
+            <th scope="col" data-bind="text: col5"></th>
+          </tr>
+      </script>
+      <script id="template-table-body" type="text/x-kendo-template">
+          <tr>
+            <th scope="row" data-bind="text: col1"></th>
+            <td data-bind="text: col2"></td>
+            <td data-bind="text: col3"></td>
+            <td data-bind="text: col4"></td>
+            <td data-bind="text: col5"></td>
+          </tr>
+      </script>    
+    <script src="/bindview.js"></script>
+    </body>
+</html>
