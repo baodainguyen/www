@@ -3,18 +3,20 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Set the width of the sidebar to 120px */
 .w3-sidebar {width: 120px;background: #222;}
 #main-content {margin-left: 0;}
-#navbar-desktop {background-color: rgba(0, 0, 0, 0.05);}
+#navbar-desktop {background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.1));}
 #navbar-desktop > div {margin:auto;max-width:1010px;}
 #navbar-desktop a.w3-bar-item {height: 50px; padding-top: 15px;}
 #navbar-phone p {margin:0;}
-#navbar-phone a {width:20% !important;padding-left:0;padding-right:0;}
+#navbar-phone a {width:19% !important;padding-left:0;padding-right:0;}
 .logo-icon {font-size: 30px; transform: rotate(-45deg);  -ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); margin-top: 5px;}
 #navbar-desktop .logo-icon {margin-top: -5px;}
 #navbar-tablet .logo-icon {font-size: 50px;}
-#navbar-phone .logo-icon {font-size: 36px;}
+#navbar-phone .logo-icon {font-size: 28px;}
 @media only screen and (min-width: 992px) {#main-content > div {padding-left:0 !important;padding-right:0 !important;}}
 @media only screen and (max-width: 993px) {#navbar-desktop {padding-left: 130px;} #main-content {margin-left: 120px;}}
 @media only screen and (max-width: 768px) {#main-content {margin-left: 120px;}}
 /* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main-content {margin-left: 0}}
-.honeypot-field {display: none;}
+@media only screen and (max-width: 600px) {#main-content {margin-left: 0;overflow: hidden;}}
+.honeypot-field {
+  display: none;
+}
