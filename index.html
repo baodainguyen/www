@@ -8,256 +8,260 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.common-material.min.css" />
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.material.min.css" />
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.material.mobile.min.css" />
     <link rel="stylesheet" href="/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
   </head>  
-  <body>
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top w3-hide-medium w3-hide-small">
-      <div class="w3-bar w3-text-white" id="navbar-desktop">
-        <div>
-          <a href="#" class="w3-bar-item">
-            <i class="fa logo-icon">&#xf14c;</i>
-          </a>
-          <a href="#home" class="w3-bar-item w3-button">
-            <i class="fa fa-home"></i> HOME
-          </a>
-          <a href="#about" class="w3-bar-item w3-button">
-            <i class="fa fa-user"></i> ABOUT
-          </a>
-          <a href="#photos" class="w3-bar-item w3-button">
-            <i class="fa fa-briefcase"></i> PORTFOLIO
-          </a>
-          <a href="#contact" class="w3-bar-item w3-button">
-            <i class="fa fa-th"></i> PROJECTS
-          </a>
-        </div>      
-      </div>
-    </div>
-    <!-- Navbar (Sidebar - hidden on small screens) -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-large w3-hide-small w3-center w3-light-grey" id="navbar-tablet">
-      <a class="w3-bar-item" href="#">
-        <i class="fa logo-icon">&#xf14c;</i>
-      </a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white">
-        <i class="fa fa-home w3-xxlarge"></i><p>HOME</p>
-      </a>
-      <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-white">
-        <i class="fa fa-user w3-xxlarge"></i><p>ABOUT</p>
-      </a>
-      <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-white">
-        <i class="fa fa-briefcase w3-xxlarge"></i><p>PORTFOLIO</p>
-      </a>
-      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-white">
-        <i class="fa fa-th w3-xxlarge"></i><p>PROJECTS</p>
-      </a>
-    </nav>
-    <!-- Navbar on small screens (Hidden on medium and large screens) -->
-    <div class="w3-bottom w3-hide-large w3-hide-medium" id="navbar-phone">
-      <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small w3-light-grey">
-        <a href="#" class="w3-bar-item">
-          <i class="fa logo-icon">&#xf14c;</i>
-        </a>
-        <a href="#" class="w3-bar-item w3-button">
-          <i class="fa fa-home w3-xlarge"></i><p>HOME</p>
-        </a>
-        <a href="#about" class="w3-bar-item w3-button">
-          <i class="fa fa-user w3-xlarge"></i><p>ABOUT</p>
-        </a>
-        <a href="#photos" class="w3-bar-item w3-button">
-          <i class="fa fa-briefcase w3-xlarge"></i><p>PORTFOLIO</p>
-        </a>
-        <a href="#contact" class="w3-bar-item w3-button">
-          <i class="fa fa-th w3-xlarge"></i><p>PROJECTS</p>
-        </a>
-      </div>
-    </div>
-
-    <!-- Page Content -->
-    <div id="main-content">
-      <!-- Header/Home -->
-      <header class="w3-center">
-        <video class="w3-image" style="object-fit: cover;width: 100%;" autoplay="" loop=""><source src="/video/SDY-hd.mov" type="video/mp4"></video>
-      </header>
-      <div id="home" class="w3-padding-large w3-content">
-        <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> John Doe.</h1>
-        <p>Photographer and Web Designer.</p>
-        <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </div>
-      <!-- About Section -->
-      <div class="w3-padding-large w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-        <h2 class="w3-text-light-black">About Me</h2>
-        <hr style="width:200px" class="w3-opacity">
-        <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <h3 class="w3-padding-16 w3-text-light-black">My Skills</h3>
-        <p class="w3-wide">Photography</p>
-        <div class="w3-white">
-          <div class="w3-dark-grey" style="height:28px;width:95%"></div>
-        </div>
-        <p class="w3-wide">Web Design</p>
-        <div class="w3-white">
-          <div class="w3-dark-grey" style="height:28px;width:85%"></div>
-        </div>
-        <p class="w3-wide">Photoshop</p>
-        <div class="w3-white">
-          <div class="w3-dark-grey" style="height:28px;width:80%"></div>
-        </div><br>
-
-        <div class="w3-row w3-center w3-padding-16 w3-section">
-          <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">11+</span><br>
-            Partners
-          </div>
-          <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">55+</span><br>
-            Projects Done
-          </div>
-          <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">89+</span><br>
-            Happy Clients
-          </div>
-          <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">150+</span><br>
-            Meetings
-          </div>
-        </div>
-
-        <button class="w3-button w3-light-grey w3-padding-large w3-section">
-          <i class="fa fa-download"></i> Download Resume
-        </button>
-
-        <!-- Grid for pricing tables -->
-        <h3 class="w3-padding-16 w3-text-grey">My Price</h3>
-        <div class="w3-row-padding" style="margin:0 -16px">
-          <div class="w3-half w3-margin-bottom">
-            <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-              <li class="w3-green w3-xlarge w3-padding-32">Basic</li>
-              <li class="w3-padding-16">Web Design</li>
-              <li class="w3-padding-16">Photography</li>
-              <li class="w3-padding-16">5GB Storage</li>
-              <li class="w3-padding-16">Mail Support</li>
-              <li class="w3-padding-16">
-                <h2>$ 10</h2>
-                <span class="w3-opacity">per month</span>
-              </li>
-              <li class="w3-light-green w3-padding-24">
-                <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="w3-half">
-            <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-              <li class="w3-xlarge w3-padding-32 w3-indigo">Pro</li>
-              <li class="w3-padding-16">Web Design</li>
-              <li class="w3-padding-16">Photography</li>
-              <li class="w3-padding-16">50GB Storage</li>
-              <li class="w3-padding-16">Endless Support</li>
-              <li class="w3-padding-16">
-                <h2>$ 25</h2>
-                <span class="w3-opacity">per month</span>
-              </li>
-              <li class="w3-blue w3-padding-24">
-                <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-              </li>
-            </ul>
-          </div>
-        <!-- End Grid/Pricing tables -->
-        </div>
-
-        <!-- Testimonials -->
-        <h3 class="w3-padding-24 w3-text-grey">My Reputation</h3>  
-        <img alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px" src="https://lumiere-a.akamaihd.net/v1/images/file_8842fa4b.jpeg">
-        <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
-        <p>Jane Doe saved us from a web disaster.</p><br>
-
-        <img alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2018/05/jkhgljhkjljhk97985784982.jpg">
-        <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
-        <p>No one is better than Jane Doe.</p>
-      <!-- End About Section -->
-      </div>
-
-      <!-- Portfolio Section -->
-      <div class="w3-padding-64 w3-content" id="photos">
-        <h2 class="w3-container w3-text-grey">Nice Photos</h2>
-        <hr style="width:200px" class="w3-opacity">
-
-        <!-- Grid for photos -->
-        <div class="w3-row-padding" style="margin:0 -16px">
-          <div class="w3-half">
-            <img style="width:100%" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2017/04/BansheeFEATUREFINAL.jpg">
-            <img style="width:100%" src="https://cdn2.lamag.com/wp-content/uploads/sites/6/2019/04/avengers-endgame-disney-1068x601.jpg">
-            <img style="width:100%" src="https://fever.imgix.net/plan/photo/57a87d3a-345b-11e9-9d09-067dfd978c4d.jpg">
-            <img style="width:100%" src="https://cdn1.bigcommerce.com/server4500/0fd9c/product_images/uploaded_images/marvel-super-heroes.jpg">
-          </div>
-
-          <div class="w3-half">
-            <img style="width:100%" src="https://cdn.europosters.eu/image/750/julisteet/spider-man-homecoming-hang-i48035.jpg">
-            <img style="width:100%" src="https://www.screengeek.net/wp-content/uploads/2017/12/marvel-cinematic-universe.jpg">
-            <img style="width:100%" src="https://pbs.twimg.com/media/D2zQfRbUcAAKsQO?format=jpg">
-          </div>
-        <!-- End photo grid -->
-        </div>
-      <!-- End Portfolio Section -->
-      </div>
-
-      <!-- Contact Section -->
-      <div class="w3-container w3-padding-64 w3-content w3-text-grey" id="contact">
-        <h2 class="w3-text-grey">Contact Me</h2>
-        <hr style="width:200px" class="w3-opacity">
-
-        <div class="w3-section">
-          <p><i class="fa fa-map-marker fa-fw w3-text-green w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-          <p><i class="fa fa-phone fa-fw w3-text-blue w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-          <a href="mailto:dai.daiquang@gmail.com">
-            <i class="fa fa-envelope fa-fw w3-text-orange w3-xxlarge w3-margin-right"> </i> Email: dai.daiquang@
-          </a>
-        </div><br>
-        <p>Lets get in touch. Send me a message:</p>
-
-        <form class="gform" action="https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec" method="POST">
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" name="Message"></p>
-          <fieldset class="honeypot-field">
-            <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
-            <input id="honeypot" type="text" name="honeypot" value="" />
-          </fieldset>
-          <p>
-            <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-              <i class="fa fa-paper-plane"></i> SEND MESSAGE
-            </button>
-          </p>
-          <div class="thankyou_message" style="display:none;">
-            <h2><em>Thanks</em> for contacting us!
-              We will get back to you soon!</h2>
-          </div>
-        </form>
-      <!-- End Contact Section -->
-      </div>
-
-        <!-- Footer -->
-      <footer class="w3-container w3-content w3-padding-64 w3-text-blue w3-xlarge">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-        <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-      <!-- End footer -->
-      </footer>
-
-    <!-- END PAGE CONTENT -->
-    </div>
+  <style>
+    .w3-container.w3-content {max-width:1400px;}
+    .w3-container.w3-content a {text-decoration:none;}
+    .w-post-meta > div {display:inline-block;padding-right:20px;}
+    .w-post-meta .w3-right {padding:0 0 10px 0;}
+    .w-post-meta .w3-right a:hover {color: #1e7145;text-decoration: underline;}
+    .w-post-content {padding-left: 16px;padding-right:16px;margin-top: -5px;}
+    .w-post-imgs div:nth-child(2n+1) {padding-right: 9px;}
+    .w-post-imgs div:nth-child(2n) {padding-left: 9px;}
+    .w3-left.w3-circle.w3-margin-right {width: 55px;}
     
-    <script src="/script.js" defer></script>
-  </body>
+    .lds-roller {
+      display: inline-block;
+      position: relative; margin-top: 89px;
+      width: 64px; height: 64px;
+    }
+    .lds-roller div {
+      animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      transform-origin: 32px 32px;
+    }
+    .lds-roller div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #1e7145;
+      margin: -3px 0 0 -3px;
+    }
+    .lds-roller div:nth-child(1) { animation-delay: -0.036s; }
+    .lds-roller div:nth-child(1):after { top: 50px; left: 50px; }
+    .lds-roller div:nth-child(2) { animation-delay: -0.072s; }
+    .lds-roller div:nth-child(2):after { top: 54px; left: 45px; }
+    .lds-roller div:nth-child(3) { animation-delay: -0.108s; }
+    .lds-roller div:nth-child(3):after { top: 57px; left: 39px; }
+    .lds-roller div:nth-child(4) { animation-delay: -0.144s; }
+    .lds-roller div:nth-child(4):after { top: 58px; left: 32px; }
+    .lds-roller div:nth-child(5) { animation-delay: -0.18s; }
+    .lds-roller div:nth-child(5):after { top: 57px; left: 25px; }
+    .lds-roller div:nth-child(6) { animation-delay: -0.216s; }
+    .lds-roller div:nth-child(6):after { top: 54px; left: 19px; }
+    .lds-roller div:nth-child(7) { animation-delay: -0.252s; }
+    .lds-roller div:nth-child(7):after { top: 50px; left: 14px; }
+    .lds-roller div:nth-child(8) { animation-delay: -0.288s; }
+    .lds-roller div:nth-child(8):after { top: 45px; left: 10px; }
+    @keyframes lds-roller { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); }  }
+
+    @media screen and (max-width: 414px) {
+      .w3-container.w3-content {padding-left:0;padding-right:0;}
+      .w3-card.w3-white.w3-margin .w3-half {padding-left:0;padding-right:0;}
+      .w3-col.l4.m4 {padding-left:16px;padding-right:16px;}
+    }
+}
+  </style>
+<body class="w3-theme-l5">
+
+  <!-- Page Container -->
+  <div class="w3-container w3-content" style="margin-top:20px">
+    <div class="w3-row">
+      <div class="w3-col l8 m8">                      <!-- Left Column -->
+        <div class="w3-row-padding">
+          <div class="w3-col m12">
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container w3-padding">
+                <h6 class="w3-opacity">Blog template from w3school/kendoUI - Content made by me</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+    <div id="kPost"><div class="lds-roller w3-display-middle"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+    <script type="text/x-kendo-template" id="tempPost">
+        <div class="w3-card w3-white w3-margin"><br>
+          <div class="w3-container">
+            <img src=#: imgTitle # alt=#: title # class="w3-left w3-circle w3-margin-right">
+            <h4>#: title #</h4>
+            <hr class="w3-clear">
+          </div>
+          <p class="w-post-content">#: content #</p>
+          
+        #var l=images.length; if( l > 1){#
+          <div class="w-post-imgs">
+          #for(var i = 0; i < l; i++) {#
+            <div class="w3-half">
+              <img src=#: images[i] # style="width:100%" alt=#: 'img-content-' + i # class="w3-margin-bottom">
+            </div>
+          #}#
+          </div>
+        #}else if(l > 0){var img = images[0];#
+          #if(img) {#
+            <img src=#: images[0] # style="width:100%" alt=#: 'img-content' # class="w3-margin-bottom">
+          #}#
+        #}#
+          <div class="w-post-meta w3-container">
+            <div class="w3-theme-d2 w3-margin-bottom"><i class="fa fa-eye"></i>  #: view #</div> 
+            <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  #: like #</div> 
+            <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-calendar-check-o"></i>  #: date #</div> 
+        #if(viewMore){#
+            <div class="w3-right"><a href=#: viewMore #>View More <span class="fa fa-angle-double-right"></span></a></div> 
+        #}#
+          </div>
+        </div>
+    </script>
+
+<!--         <div class="w3-card w3-white w3-margin"><br>
+          <div class="w3-container">
+            <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right">
+            <span class="w3-right w3-opacity">1 min</span>
+            <h4>John Doe</h4><br>
+            <hr class="w3-clear">
+          </div>
+          
+          <p class="w-post-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="w-post-imgs">
+            <div class="w3-half">
+              <img src="https://www.w3schools.com/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+            </div>
+            <div class="w3-half">
+              <img src="https://www.w3schools.com/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+            </div>
+            <div class="w3-half">
+              <img src="https://www.w3schools.com/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+            </div>
+            <div class="w3-half">
+              <img src="https://www.w3schools.com/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+            </div>
+            
+          </div>
+          <div class="w-post-meta w3-container">
+            <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  300</div> 
+            <div class="w3-theme-d2 w3-margin-bottom"><i class="fa fa-eye"></i>  15k</div> 
+          </div>
+        </div>
+        <div class="w3-container w3-card w3-white w3-margin"><br>
+          <div class="w3-container">
+            <img src="https://www.w3schools.com/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right">
+            <span class="w3-right w3-opacity">16 min</span>
+            <h4>Jane Doe</h4><br>
+            <hr class="w3-clear">
+          </div>
+          <p class="w-post-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="w-post-meta w3-container">
+            <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  300</div> 
+            <div class="w3-theme-d2 w3-margin-bottom"><i class="fa fa-eye"></i>  15k</div> 
+          </div>
+        </div>  
+
+        <div class="w3-card w3-white w3-margin"><br>
+          <div class="w3-container">
+            <img src="https://www.w3schools.com/w3images/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right">
+            <span class="w3-right w3-opacity">32 min</span>
+            <h4>Angie Jane</h4><br>
+            <hr class="w3-clear">
+          </div>
+          
+          <p class="w-post-content">Have you seen this?</p>
+          <div class="w-post-imgs">
+            <img src="https://www.w3schools.com/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+          </div>
+          <p class="w-post-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="w-post-meta w3-container">
+            <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</div> 
+            <div class="w3-theme-d2 w3-margin-bottom"><i class="fa fa-eye"></i>  15k</div> 
+          </div>
+        </div>         -->
+      </div>                                  <!-- End Left Column -->
+      
+      <div class="w3-col l4 m4">              <!-- Right Column -->
+        <div class="w3-card w3-white">        <!-- Profile -->
+          <div class="w3-container">
+           <h4 class="w3-center">Profile </h4>
+           <p class="w3-center"><img src="https://www.w3schools.com/w3images/avatar3.png" style="height:250px;width:100%;object-fit: cover;" alt="Avatar"></p>
+           <hr>
+           <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+           <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+           <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+          </div>
+        </div>
+        <br>
+        
+        <div class="w3-card">                  <!-- Accordion -->
+          <div class="w3-white">
+            <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+            
+            <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events - cv</button>
+            
+            <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+            
+          </div>      
+        </div>
+        <br>
+
+        <!-- Interests --> 
+        <div class="w3-card w3-white w3-hide-small">
+          <div class="w3-container">
+            <p>Interests</p>
+            <p>
+              <span class="w3-tag w3-small w3-theme-d5">News</span>
+              <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
+              <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+              <span class="w3-tag w3-small w3-theme-d2">Games</span>
+              <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+              <span class="w3-tag w3-small w3-theme">Games</span>
+              <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+              <span class="w3-tag w3-small w3-theme-l2">Food</span>
+              <span class="w3-tag w3-small w3-theme-l3">Design</span>
+              <span class="w3-tag w3-small w3-theme-l4">Art</span>
+              <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+            </p>
+          </div>
+        </div>
+        <br>
+
+        <!-- Alert Box -->
+        <div class="w3-container w3-display-container w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+            <i class="fa fa-remove"></i>
+          </span>
+          <p><strong>Hey!</strong></p>
+          <p>People are looking at your profile. Find out who.</p>
+        </div>
+        <div class="w3-card w3-white w3-center">
+            <div style="padding: 5px 0;">
+              <p>Upcoming Events:</p>
+              <img src="https://www.w3schools.com/w3images/forest.jpg" alt="Forest" style="width:100%;">
+              <p><strong>Holiday</strong></p>
+              <p>Friday 15:00</p>
+              <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+            </div>
+          </div>
+          <br>
+
+          <div class="w3-card w3-white w3-padding-32 w3-center">
+            <p><i class="fa fa-bug w3-xxlarge"></i></p>
+          </div>
+      
+      </div>         <!-- End Right Column -->
+    </div>                                        <!-- End Grid -->
+  </div>                                          <!-- End Page Container -->
+  
+  <footer class="w3-container w3-content w3-padding-32">
+    <div class="row" style="padding-left:16px;">
+      <p class="w3-tiny w3-text-grey">Powered by <a href="https://www.w3schools.com" target="_blank" class="w3-text-green w3-hover-text-green">w3schools</a></p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
 </html>
