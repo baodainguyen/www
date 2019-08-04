@@ -18,9 +18,10 @@
   <style>
     .w3-container.w3-content {max-width:1400px;}
     .w3-container.w3-content a {text-decoration:none;}
+    .w3-col.l4.m4 p > a {font-size: 18px;text-decoration:underline !important;}
     .w-post-meta > div {display:inline-block;padding-right:20px;}
     .w-post-meta .w3-right {padding:0 0 10px 0;}
-    .w-post-meta .w3-right a:hover {color: #1e7145;text-decoration: underline;}
+    a:hover {color: #1e7145;text-decoration: underline;}
     .w-post-content {padding-left: 16px;padding-right:16px;margin-top: -5px;}
     .w-post-imgs div:nth-child(2n+1) {padding-right: 9px;}
     .w-post-imgs div:nth-child(2n) {padding-left: 9px;}
@@ -85,8 +86,9 @@
           </div>
         </div>
         
-        
-    <div id="kPost"><div class="lds-roller w3-display-middle"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+    <div id="kPost"><div class="lds-roller w3-display-middle">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
     <script type="text/x-kendo-template" id="tempPost">
         <div class="w3-card w3-white w3-margin"><br>
           <div class="w3-container">
@@ -122,75 +124,74 @@
 
       </div>                                  <!-- End Left Column -->
       
-      <div class="w3-col l4 m4">              <!-- Right Column -->
-        <div class="w3-card w3-white">        <!-- Profile -->
+      <script type="text/x-kendo-template" id="tempInfo">
+        <div class="w3-card w3-white"> 
           <div class="w3-container">
-           <h4 class="w3-center">Hi, I am DaiNB </h4>
-           <p class="w3-center"><img src="https://www.w3schools.com/w3images/avatar3.png" style="height:250px;width:100%;object-fit: cover;" alt="Avatar"></p>
-           <hr>
-           <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Developer/Designer</p>
-           <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Hanoi - Vietnam</p>
-           <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> Jun - 1989</p>
+            #var lC = iClass.length, lN = listName.length; #
+            #if(title){#
+              #if(img){#
+                <h4 class="w3-center">#: title #</h4>
           </div>
-        </div>
-        <br>
-        
-        <div class="w3-card">                  <!-- Accordion -->
-          <div class="w3-white">
-            <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+                <img src=#: img # alt=#:type + id # style="height:150px;width:100%;object-fit: cover;">
+                <div class="w3-container ">
+                #if(lC>0 && iClass[0]){#
+                  <hr>
+                    #for(var x=0 ;x<lN; x++){#
+                      <p><i class="fa fa-fw w3-margin-right w3-text-theme #:iClass[x]#"></i> #:listName[x]#</p>
+                    #}#
+                  #} else {#
+                    #for(var x=0 ;x<lN; x++){#
+                        <p class="w3-center">#:listName[x]#</p>
+                    #}#
+                  #}#
+                </div>
+              #} else {#
+                <h4>#: title #</h4>
+                #if(lN > 0 && listName[0]){# <p>
+                  #for(var x=0 ;x<lN; x++){#
+                    <span class="w3-tag w3-small w3-theme-l1">#:listName[x]#</span>
+                  #}# </p>
+                #}#
+          </div>
+              #}#
+            #} else {#
+              #if(lC>0 && iClass[0]){#
+                #for(var x=0 ;x<lN; x++){#
+                  <a class="w3-margin-top w3-block w3-theme-l1 w3-left-align" href=#:listLink[x]#>
+                    <i class="fa fa-fw w3-margin-right #:iClass[x]#"></i> #:listName[x]#
+                  </a>
+                #}# <br>
+              #}#
+          </div>
+            #}#
             
-            <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events - cv</button>
-            
-            <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
-            
-          </div>      
-        </div>
-        <br>
+        </div><br>
+      </script>
+      
+      <div class="w3-col l4 m4">              <!-- Right Column -->
+        <div id="kInfo"> </div>
 
-        <!-- Interests --> 
-        <div class="w3-card w3-white w3-hide-small">
+        <div class="w3-card w3-white">
           <div class="w3-container">
-            <p>Interests</p>
+            <h5>Hello!</h5>
             <p>
-              <span class="w3-tag w3-small w3-theme-d5">News</span>
-              <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
-              <span class="w3-tag w3-small w3-theme-d3">Digital painting</span>
-              <span class="w3-tag w3-small w3-theme-d2">Football</span>
-              <span class="w3-tag w3-small w3-theme">Games</span>
-              <span class="w3-tag w3-small w3-theme-l1">Architechture</span>
-              <span class="w3-tag w3-small w3-theme-l2">Food</span>
-              <span class="w3-tag w3-small w3-theme-l3">Design</span>
-              <span class="w3-tag w3-small w3-theme-l4">Art</span>
-              <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+              I am so excited when you visit this site. <br>
+              If you want to support front-end and a little back-end, you could contact me via
+              <a href="skype:baodaihd89?call">Skype</a> -or-
+              <a href="mailto:baodaihd89@gmail.com">E-mail</a>
             </p>
           </div>
         </div>
         <br>
-
-        <!-- Alert Box -->
-        <div class="w3-container w3-display-container w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-            <i class="fa fa-remove"></i>
-          </span>
-          <p><strong>Hey!</strong></p>
-          <p>People are looking at your profile. Find out who.</p>
-        </div>
-        <div class="w3-card w3-white w3-center">
-            <div style="padding: 5px 0;">
-              <p>Upcoming Events:</p>
-              <img src="https://www.w3schools.com/w3images/forest.jpg" alt="Forest" style="width:100%;">
-              <p><strong>Holiday</strong></p>
-              <p>Friday 15:00</p>
-              <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
-            </div>
-          </div>
-          <br>
-
-          <div class="w3-card w3-white w3-padding-32 w3-center">
+          
+          <div class="w3-padding-32 w3-center w3-container w3-display-container w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+            <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright" style="margin-right:3px;">
+              <i class="fa fa-remove"></i>
+            </span>
             <p><i class="fa fa-bug w3-xxlarge"></i></p>
           </div>
       
-      </div>         <!-- End Right Column -->
+      </div>                                      <!-- End Right Column -->
     </div>                                        <!-- End Grid -->
   </div>                                          <!-- End Page Container -->
   
