@@ -16,67 +16,12 @@
   <script src="https://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
   </head>  
   <style>
-    .w3-container.w3-content {max-width:1400px;}
-    .w3-container.w3-content a {text-decoration:none;}
-    .w3-col.l4.m4 p > a {font-size: 18px;text-decoration:underline !important;}
-    .w-post-meta > div {display:inline-block;padding-right:20px;}
-    .w-post-meta .w3-right {padding:0 0 10px 0;}
-    a:hover {color: #1e7145;text-decoration: underline;}
-    .w-post-content {padding-left: 16px;padding-right:16px;margin-top: -5px;}
-    .w-post-imgs div:nth-child(2n+1) {padding-right: 9px;}
-    .w-post-imgs div:nth-child(2n) {padding-left: 9px;}
-    .w3-left.w3-circle.w3-margin-right {width: 55px;}
-    .wp p {padding: 0 16px;margin-top: 0;white-space: pre-line;}
-    .wp div {width: 100%;border-top: 1px solid black;border-bottom: 1px solid black;padding:16px;margin-bottom: 16px;}
-    .wp img {width: 100%;padding-bottom: 16px;}
-    .lds-roller {
-      display: inline-block;
-      position: relative; margin-top: 89px;
-      width: 64px; height: 64px;
-    }
-    .lds-roller div {
-      animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-      transform-origin: 32px 32px;
-    }
-    .lds-roller div:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #1e7145;
-      margin: -3px 0 0 -3px;
-    }
-    .lds-roller div:nth-child(1) { animation-delay: -0.036s; }
-    .lds-roller div:nth-child(1):after { top: 50px; left: 50px; }
-    .lds-roller div:nth-child(2) { animation-delay: -0.072s; }
-    .lds-roller div:nth-child(2):after { top: 54px; left: 45px; }
-    .lds-roller div:nth-child(3) { animation-delay: -0.108s; }
-    .lds-roller div:nth-child(3):after { top: 57px; left: 39px; }
-    .lds-roller div:nth-child(4) { animation-delay: -0.144s; }
-    .lds-roller div:nth-child(4):after { top: 58px; left: 32px; }
-    .lds-roller div:nth-child(5) { animation-delay: -0.18s; }
-    .lds-roller div:nth-child(5):after { top: 57px; left: 25px; }
-    .lds-roller div:nth-child(6) { animation-delay: -0.216s; }
-    .lds-roller div:nth-child(6):after { top: 54px; left: 19px; }
-    .lds-roller div:nth-child(7) { animation-delay: -0.252s; }
-    .lds-roller div:nth-child(7):after { top: 50px; left: 14px; }
-    .lds-roller div:nth-child(8) { animation-delay: -0.288s; }
-    .lds-roller div:nth-child(8):after { top: 45px; left: 10px; }
-    @keyframes lds-roller { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); }  }
-
-    @media screen and (max-width: 414px) {
-      .w3-container.w3-content {padding-left:0;padding-right:0;}
-      .w3-card.w3-white.w3-margin .w3-half {padding-left:0;padding-right:0;}
-      .w3-col.l4.m4 {padding-left:16px;padding-right:16px;}
-    }
+    .w3-container.w3-content{max-width:1400px}.w3-container.w3-content a{text-decoration:none}.w3-col.l4.m4 p>a{font-size:18px;text-decoration:underline!important}.w-post-meta>div{display:inline-block;padding-right:20px}.w-post-meta .w3-right{padding:0 0 10px 0}a:hover{color:#1e7145;text-decoration:underline}.w-post-content{padding-left:16px;padding-right:16px;margin-top:-5px}.w-post-imgs div:nth-child(2n+1){padding-right:9px}.w-post-imgs div:nth-child(2n){padding-left:9px}.w3-left.w3-circle.w3-margin-right{width:55px}.wp p{padding:0 16px;margin-top:0;white-space:pre-line}.wp div{width:100%;border-top:1px solid #000;border-bottom:1px solid #000;padding:16px;margin-bottom:16px}.wp img{width:100%;padding-bottom:16px}.lds-roller{display:inline-block;position:relative;margin-top:89px;width:64px;height:64px}.lds-roller div{animation:lds-roller 1.2s cubic-bezier(.5,0,.5,1) infinite;transform-origin:32px 32px}.lds-roller div:after{content:" ";display:block;position:absolute;width:6px;height:6px;border-radius:50%;background:#1e7145;margin:-3px 0 0 -3px}.lds-roller div:nth-child(1){animation-delay:-36ms}.lds-roller div:nth-child(1):after{top:50px;left:50px}.lds-roller div:nth-child(2){animation-delay:-72ms}.lds-roller div:nth-child(2):after{top:54px;left:45px}.lds-roller div:nth-child(3){animation-delay:-108ms}.lds-roller div:nth-child(3):after{top:57px;left:39px}.lds-roller div:nth-child(4){animation-delay:-144ms}.lds-roller div:nth-child(4):after{top:58px;left:32px}.lds-roller div:nth-child(5){animation-delay:-.18s}.lds-roller div:nth-child(5):after{top:57px;left:25px}.lds-roller div:nth-child(6){animation-delay:-216ms}.lds-roller div:nth-child(6):after{top:54px;left:19px}.lds-roller div:nth-child(7){animation-delay:-252ms}.lds-roller div:nth-child(7):after{top:50px;left:14px}.lds-roller div:nth-child(8){animation-delay:-288ms}.lds-roller div:nth-child(8):after{top:45px;left:10px}@keyframes lds-roller{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@media screen and (max-width:414px){.w3-container.w3-content{padding-left:0;padding-right:0}.w3-card.w3-white.w3-margin .w3-half{padding-left:0;padding-right:0}.w3-col.l4.m4{padding-left:16px;padding-right:16px}}
   </style>
 <body class="w3-theme-l5">
-
-  <!-- Page Container -->
   <div class="w3-container w3-content" style="margin-top:20px">
     <div class="w3-row">
-      <div class="w3-col l8 m8">                      <!-- Left Column -->
+      <div class="w3-col l8 m8">    
         <div class="w3-row-padding">
           <div class="w3-col m12">
             <div class="w3-card w3-round w3-white">
@@ -86,7 +31,6 @@
             </div>
           </div>
         </div>
-        
     <div id="kPost"><div class="lds-roller w3-display-middle">
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
@@ -101,7 +45,6 @@
             <div class="wp"> #= h # </div>
         #} else {#
           <p class="w-post-content">#: content #</p>
-          
             #var l=images.length; if( l > 1){#
               <div class="w-post-imgs">
               #for(var i = 0; i < l; i++) {#
@@ -125,9 +68,7 @@
           </div>
         </div>
     </script>
-
-      </div>                                  <!-- End Left Column -->
-      
+      </div>  
       <script type="text/x-kendo-template" id="tempInfo">
         <div class="w3-card w3-white"> 
           <div class="w3-container">
@@ -168,13 +109,10 @@
               #}#
           </div>
             #}#
-            
         </div><br>
       </script>
-      
-      <div class="w3-col l4 m4">              <!-- Right Column -->
+      <div class="w3-col l4 m4"> 
         <div id="kInfo"> </div>
-
         <div class="w3-card w3-white">
           <div class="w3-container">
             <h5>Hello!</h5>
@@ -187,24 +125,20 @@
           </div>
         </div>
         <br>
-          
           <div class="w3-padding-32 w3-center w3-container w3-display-container w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
             <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright" style="margin-right:3px;">
               <i class="fa fa-remove"></i>
             </span>
             <p><i class="fa fa-bug w3-xxlarge"></i></p>
           </div>
-      
-      </div>                                      <!-- End Right Column -->
-    </div>                                        <!-- End Grid -->
-  </div>                                          <!-- End Page Container -->
-  
+      </div>              
+    </div>               
+  </div>  
   <footer class="w3-container w3-content w3-padding-32">
     <div class="row" style="padding-left:16px;">
       <p class="w3-tiny w3-text-grey">Powered by <a href="https://www.w3schools.com" target="_blank" class="w3-text-green w3-hover-text-green">w3schools</a></p>
     </div>
   </footer>
-
   <script src="/script.js"></script>
 </body>
 </html>
