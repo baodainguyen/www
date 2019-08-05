@@ -26,7 +26,9 @@
     .w-post-imgs div:nth-child(2n+1) {padding-right: 9px;}
     .w-post-imgs div:nth-child(2n) {padding-left: 9px;}
     .w3-left.w3-circle.w3-margin-right {width: 55px;}
-    
+    .wp p {padding: 0 16px;margin-top: 0;white-space: pre;}
+    .wp div {width: 100%;border-top: 1px solid black;border-bottom: 1px solid black;padding:16px;margin-bottom: 16px;}
+    .wp img {width: 100%;padding-bottom: 16px;}
     .lds-roller {
       display: inline-block;
       position: relative; margin-top: 89px;
@@ -95,28 +97,31 @@
             <h4>#: title #</h4>
             <hr class="w3-clear">
           </div>
+        #var h=html;if(h){#
+            <div class="wp"> #= h # </div>
+        #} else {#
           <p class="w-post-content">#: content #</p>
           
-        #var l=images.length; if( l > 1){#
-          <div class="w-post-imgs">
-          #for(var i = 0; i < l; i++) {#
-            <div class="w3-half">
-              <img src=#: images[i] # style="width:100%" alt=#: 'img-content-' + i # class="w3-margin-bottom">
-            </div>
-          #}#
-          </div>
-        #}else if(l > 0){var img = images[0];#
-          #if(img) {#
-            <img src=#: images[0] # style="width:100%" alt=#: 'img-content' # class="w3-margin-bottom">
-          #}#
-        #}#
-          <div class="w-post-meta w3-container">
-            <div class="w3-theme-d2 w3-margin-bottom"><i class="fa fa-eye"></i>  #: view #</div> 
-            <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  #: like #</div> 
-            <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-calendar-check-o"></i>  #: date #</div> 
-        #if(viewMore){#
-            <div class="w3-right"><a href=#: viewMore # target="_blank">View More <span class="fa fa-angle-double-right"></span></a></div> 
-        #}#
+            #var l=images.length; if( l > 1){#
+              <div class="w-post-imgs">
+              #for(var i = 0; i < l; i++) {#
+                <div class="w3-half">
+                  <img src=#: images[i] # style="width:100%" alt=#: 'img-content-' + i # class="w3-margin-bottom">
+                </div>
+              #}#
+              </div>
+            #}else if(l > 0){var img = images[0];#
+              #if(img) {#
+                <img src=#: images[0] # style="width:100%" alt=#: 'img-content' # class="w3-margin-bottom">
+              #}#
+          #} }#
+              <div class="w-post-meta w3-container">
+                <div class="w3-theme-d2 w3-margin-bottom"><i class="fa fa-eye"></i>  #: view #</div> 
+                <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  #: like #</div> 
+                <div class="w3-theme-d1 w3-margin-bottom"><i class="fa fa-calendar-check-o"></i>  #: date #</div> 
+            #if(viewMore){#
+                <div class="w3-right"><a href=#: viewMore # target="_blank">View More <span class="fa fa-angle-double-right"></span></a></div> 
+            #}#
           </div>
         </div>
     </script>

@@ -2,19 +2,17 @@ var Test = (function(){
   return {
     posts: [
       {  imgTitle: 'https://www.w3schools.com/w3images/avatar1.png', title: 'DaiNB 1 working from Kloon as Developer and lead Designer', date: '1 min', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-         images: ['https://www.w3schools.com/w3images/lights.jpg', 'https://www.w3schools.com/w3images/nature.jpg'], view: '30k', like: '300', id: 1, viewMore: 'http://www.link.com'
+         images: ['https://www.w3schools.com/w3images/lights.jpg', 'https://www.w3schools.com/w3images/nature.jpg'], view: '30k', like: '300', id: 0, viewMore: 'http://www.link.com', html: ''
       },
       {  imgTitle: 'https://www.w3schools.com/w3images/avatar2.png', title: 'DaiNB 3000', date: '1 min', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-         images: ['https://www.w3schools.com/w3images/nature.jpg'], view: '3', like: '0', id: 1, viewMore: ''
+         images: [''], view: '3', like: '0', id: 1, viewMore: '', html: ''
       },
       {
-        imgTitle: 'https://www.w3schools.com/w3images/avatar5.png', title: 'DaiNB 2', date: '03/7/2019', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ',
-        images: [""], view: '15k', like: '1', id: 2, viewMore: 'http://www.link3'
+        imgTitle: 'https://www.w3schools.com/w3images/avatar5.png', title: 'DaiNB 2', date: '05/7/2019', content: '',
+        images: [""], view: '15k', like: '1', id: 2, viewMore: 'http://link.com',
+        html: '<p>Thi text test for html render</p><img src="https://www.w3schools.com/w3images/nature.jpg" alt="test"><img src="https://www.w3schools.com/w3images/nature.jpg" alt="test">'
       }
-    ],
-    right: {
-      
-    }
+    ]
   }
 })();
 var Service = (function(){
@@ -39,7 +37,6 @@ var Service = (function(){
         var m = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
         var d = new Date(item.date);
         i.date = d.getDate() + '/' + m[d.getMonth()] + '/' + d.getFullYear();
-        //i.date = new Date(item.date).toJSON().slice(0,10).split('-').reverse().join('/');
         i.images = item.images.split(";");
         return i;
       });
@@ -54,14 +51,12 @@ var Service = (function(){
 $(document).ready(function(){
   
   Service.getData(function(json){
-    
-    var template = kendo.template($("#tempPost").html());        // defined
+    var template = kendo.template($("#tempPost").html());
     var result = kendo.render(template, json);
     $("#kPost").html(result);
   });
-  Service.getInfo(function(json){//kInfo
-    console.log(json); 
-    var tmp = kendo.template($("#tempInfo").html());        // defined
+  Service.getInfo(function(json){
+    var tmp = kendo.template($("#tempInfo").html());
     var result = kendo.render(tmp, json);
     $("#kInfo").html(result);
   });
