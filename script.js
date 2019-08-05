@@ -1,1 +1,48 @@
-var Service=function(){return{getData:function(t){$.getJSON("https://script.google.com/macros/s/AKfycbynTAnIGk6SnlY_JTAifuPaEgLZj--2keXhCxkIDj079NfszXY/exec",function(e){var n=e.map(function(t){var e=t,n=new Date(t.date);return e.date=n.getDate()+"/"+["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][n.getMonth()]+"/"+n.getFullYear(),e.images=t.images.split(";"),e});t(n)})},getInfo:function(t){$.getJSON("https://script.google.com/macros/s/AKfycbz-NAllZ6wAG7gDVAlVfvowxCN3FnkDKcf6XMMDnOyTY7THGv2V/exec",function(e){var n=e.map(function(t){var e=t;return e.listName=t.listName.split(";"),e.listLink=t.listLink.split(";"),e.iClass=t.iClass.split(";"),e});t(n)})}}}();$(document).ready(function(){Service.getData(function(t){var e=kendo.template($("#tempPost").html()),n=kendo.render(e,t);$("#kPost").html(n)}),Service.getInfo(function(t){console.log(t);var e=kendo.template($("#tempInfo").html()),n=kendo.render(e,t);$("#kInfo").html(n)})});
+
+var Service = (function(){
+  function getInfo(callback) {
+    var url = 'https://script.google.com/macros/s/AKfycbz-NAllZ6wAG7gDVAlVfvowxCN3FnkDKcf6XMMDnOyTY7THGv2V/exec';
+    $.getJSON(url, function(json){
+      var j = json.map(function(item){
+        var i = item;
+        i.listName = item.listName.split(";");
+        i.listLink = item.listLink.split(";");
+        i.iClass = item.iClass.split(";");
+        return i;
+      });
+      callback(j);
+    });
+  }
+  function getData(callback){
+    var url = 'https://script.google.com/macros/s/AKfycbynTAnIGk6SnlY_JTAifuPaEgLZj--2keXhCxkIDj079NfszXY/exec';
+    $.getJSON(url, function(json){
+      var j = json.map(function(item){
+        var i = item;
+        var m = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        var d = new Date(item.date);
+        i.date = d.getDate() + '/' + m[d.getMonth()] + '/' + d.getFullYear();
+        i.images = item.images.split(";");
+        return i;
+      });
+      callback(j);
+    }); 
+  }; 
+  return {
+    getData: getData,
+    getInfo: getInfo
+  }
+})();
+$(document).ready(function(){
+  Service.getData(function(json){
+    var template = kendo.template($("#tempPost").html());
+    var result = kendo.render(template, json);
+    $("#kPost").html(result);
+  });
+  Service.getInfo(function(json){
+    var tmp = kendo.template($("#tempInfo").html());
+    var result = kendo.render(tmp, json);
+    $("#kInfo").html(result);
+  });
+});
+
+
