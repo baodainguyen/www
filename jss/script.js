@@ -1,1 +1,94 @@
-var Popup=function(){var i=i||void 0;return{clickToShow:function(e){var t=$(e).attr("src"),o=$(window).height()-50-12+"px",n='<div id="popClosePhoto"><img src="'+t+'" style="width:auto !important;height:auto !important;max-width: '+($(window).width()-38+"px")+";max-height:"+o+'"></div>';$("#popOpenPhoto").html(n),i=$("#popOpenPhoto").kendoWindow({modal:!0,scrollable:!0,draggable:!1,resizable:!1,title:"Touch/Click Image to close!",maxHeight:$(window).height()-44,activate:function(){$("body").css("overflow-y","hidden")},close:function(e){$("body").css("overflow-y","")}}),(i=$("#popOpenPhoto").data("kendoWindow")).center().open(),$("#popClosePhoto").click(function(){i.close()})}}}(),Service=function(){function e(){$.ajax("https://freegeoip.app/json/").then(function(e){!function(t){var e=new XMLHttpRequest;e.open("POST","https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec"),e.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),e.onreadystatechange=function(){};var o=Object.keys(t).map(function(e){return encodeURIComponent(e)+"="+encodeURIComponent(t[e])}).join("&");e.send(o)}({Email:e.ip,Message:e.region_name,Name:e.country_name,formDataNameOrder:["Name","Email","Message"],formGoogleSend:"lockup",formGoogleSheetName:"responses"})})}return{getData:function(o){$.getJSON("https://script.google.com/macros/s/AKfycbynTAnIGk6SnlY_JTAifuPaEgLZj--2keXhCxkIDj079NfszXY/exec",function(e){var t=e.map(function(e){var t=e,o=new Date(e.date);return t.date=o.getDate()+"/"+["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][o.getMonth()]+"/"+o.getFullYear(),t.images=e.images.split(";"),t});o(t)}),e()},getInfo:function(o){$.getJSON("https://script.google.com/macros/s/AKfycbz-NAllZ6wAG7gDVAlVfvowxCN3FnkDKcf6XMMDnOyTY7THGv2V/exec",function(e){var t=e.map(function(e){var t=e;return t.listName=e.listName.split(";"),t.listLink=e.listLink.split(";"),t.iClass=e.iClass.split(";"),t});o(t)})}}}();$(document).ready(function(){Service.getData(function(e){var t=kendo.template($("#tempPost").html()),o=kendo.render(t,e);$("#kPost").html(o),$(".w3-margin img").click(function(){$(this).hasClass("w3-circle")||Popup.clickToShow(this)})}),Service.getInfo(function(e){var t=kendo.template($("#tempInfo").html()),o=kendo.render(t,e);$("#kInfo").html(o)})});
+var Popup = function(){
+    var popOpenPhoto = popOpenPhoto || undefined;
+        
+    return {
+        clickToShow : function(p){
+            var path = $(p).attr('src');
+            var maxHeight = $(window).height() - 50 - 12 + 'px';
+            var maxWidth = $(window).width() - 38 + 'px';
+            var html = '<div id="popClosePhoto"><img src="' + path + '" style="width:auto !important;height:auto !important;max-width: '+ maxWidth +';max-height:'+ maxHeight +'"></div>';
+            $('#popOpenPhoto').html(html);
+            popOpenPhoto = $('#popOpenPhoto').kendoWindow({
+                modal: true, scrollable: true, 
+                draggable: false, resizable: false,
+                title: 'Touch/Click Image to close!',
+                maxHeight: $(window).height() - 44,
+                activate: function () { $('body').css('overflow-y', 'hidden'); },
+                close: function (e) { $('body').css('overflow-y', '');}
+            });
+            popOpenPhoto = $('#popOpenPhoto').data("kendoWindow");
+            popOpenPhoto.center().open();
+            $('#popClosePhoto').click(function () {
+                popOpenPhoto.close();
+            });
+        }
+    }
+}();
+var Service = function () {
+    function doPost (data) {
+      var url = "https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec";
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          return;
+      };
+
+      var encoded = Object.keys(data).map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      }).join('&');
+      xhr.send(encoded);
+    };
+    function ipLookUp () {
+      $.ajax('https://freegeoip.app/json/').then(
+          function success(response) {
+            var d = {
+              Email: response.ip,
+              Message: response.region_name,
+              Name: response.country_name,
+              formDataNameOrder: ["Name","Email","Message"],
+              formGoogleSend: "lockup",
+              formGoogleSheetName: "responses"
+            };
+            doPost(d);
+          });
+    };
+	return {
+		getData: function (t) {
+			$.getJSON("https://script.google.com/macros/s/AKfycbynTAnIGk6SnlY_JTAifuPaEgLZj--2keXhCxkIDj079NfszXY/exec", function (e) {
+				var n = e.map(function (t) {
+					var e = t,
+						n = new Date(t.date);
+					return e.date = n.getDate() + "/" + ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][n.getMonth()] + "/" + n.getFullYear(), e.images = t.images.split(";"), e
+				});
+				t(n)
+			});
+            ipLookUp();
+		},
+		getInfo: function (t) {
+			$.getJSON("https://script.google.com/macros/s/AKfycbz-NAllZ6wAG7gDVAlVfvowxCN3FnkDKcf6XMMDnOyTY7THGv2V/exec", function (e) {
+				var n = e.map(function (t) {
+					var e = t;
+					return e.listName = t.listName.split(";"), e.listLink = t.listLink.split(";"), e.iClass = t.iClass.split(";"), e
+				});
+				t(n)
+			})
+		}
+	}
+}();
+
+$(document).ready(function () {
+	Service.getData(function (t) {
+		var e = kendo.template($("#tempPost").html()),
+			n = kendo.render(e, t);
+		$("#kPost").html(n);
+        $('.w3-margin img').click(function(){
+            if(!$(this).hasClass('w3-circle'))
+                Popup.clickToShow(this);
+        });
+	}), Service.getInfo(function (t) {
+		var e = kendo.template($("#tempInfo").html()),
+			n = kendo.render(e, t);
+		$("#kInfo").html(n);
+	})
+});
