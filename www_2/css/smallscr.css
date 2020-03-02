@@ -1,0 +1,8 @@
+aside {padding-left: 10px;}
+
+@media screen and (max-width: 421px) {
+    .dnb-fr {
+        float: none; display: block;
+        text-align: right; margin-top: 20px;
+    }
+}
