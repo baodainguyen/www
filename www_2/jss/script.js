@@ -40,7 +40,25 @@ var aside = [
         iClass: ""
     }
 ];
-
+function info ({id, type, title, img, content, listName, listLink, iClass}){
+    var header = title ? `<h4 class="dnb-v-cen dnb-pt10 dnb-pb10">${title}</h4>` : (img ? `<img src="${img}" style="width: 100%; height: 300px; object-fit: cover;" alt="${type}">` : ``);
+    switch(type){
+        case 'Profile':
+            header += `<hr class="dnb-mr10 dnb-ml10">`;
+            break;
+            
+           };
+    
+    
+    return `<div class="dnb-shadow dnb-mb10">` 
+        + header 
+        + `<div class="dnb-pr10 dnb-pl10 dnb-pb10">
+          <p><i class="fa fa-fw w3-margin-right w3-text-theme fa-pencil"></i>Dev - Design</p>
+          <p><i class="fa fa-fw w3-margin-right w3-text-theme fa-home"></i>Haiduong - VN</p>
+          <p><i class="fa fa-fw w3-margin-right w3-text-theme fa-birthday-cake"></i>1st week of June</p>
+        </div>
+      </div>`
+}
 var dnb = (function() {
     function SubMdl (parentId){ 
         this.parentId = parentId;
