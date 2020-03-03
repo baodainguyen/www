@@ -62,13 +62,14 @@ var dnb = (function() {
                   if(success) success(JSON.parse(this.response));
               }
           };
-        if(data) {
-          var encoded = Object.keys(data).map(function(k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-          }).join('&');
-          xhr.send(encoded);
-        }
-          xhr.send();
+            if(data) {
+              var encoded = Object.keys(data).map(function(k) {
+                return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+              }).join('&');
+              xhr.send(encoded);
+            } else {
+                xhr.send();
+            }
         };
         
         ins.get = function(url, {success}){ 
@@ -94,19 +95,20 @@ var dnb = (function() {
     }
     
     void function ipLookup(){
-        new SubMdl().service().get("https://freegeoip.app/json/", {
-        success: function(response){
-          var d = {
-              Email: response.ip,
-              Message: response.region_name,
-              Name: response.country_name,
-              formDataNameOrder: ["Name","Email","Message"],
-              formGoogleSend: "lockup",
-              formGoogleSheetName: "responses"
-            };
-          new SubMdl().service().post("https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec", {data: d});
-      }});
-    }
+        var iplkp = new SubMdl().service().get("https://freegeoip.app/json/", {
+            success: function(response){
+              var d = {
+                  Email: response.ip,
+                  Message: response.region_name,
+                  Name: response.country_name,
+                  formDataNameOrder: ["Name","Email","Message"],
+                  formGoogleSend: "lockup",
+                  formGoogleSheetName: "responses"
+                };
+              iplkp.post("", {data: d});
+          }
+        });
+    }();
     
     return {
         SubModule: SubMdl
@@ -155,5 +157,5 @@ window.onload = function(){
             
             main.render({template: x});
         }
-    })
+    });
 }
