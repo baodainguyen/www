@@ -1,4 +1,6 @@
 aside {padding-left: 10px;}
+.dnb-flex-1,.dnb-flex-2 {flex-basis: 100%; max-width: 100%; min-width: 90%}
+.dnb-flex-1 {padding-left: 10px}
 
 @media screen and (max-width: 421px) {
     .dnb-fr {
