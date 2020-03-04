@@ -49,7 +49,7 @@ var dnb = (function() {
                 document.getElementById(ins.parentId).innerHTML = template;
             }
         return ins;
-    }
+    };
     
     void function ipLookup(){
         var iplkp = new SubMdl().service().get("https://freegeoip.app/json/", {
@@ -157,7 +157,7 @@ window.onload = function(){
                                       {                
                                         return `<a class="dnb-block dnb-pb10 dnb-pt10" href="${links[i]}" target="_blank"><i class="fa fa-fw ${ics[i] || icsDft[i]}"></i>${e}</a>`
                                       }).join('')}
-                                    </div>`
+                                    </div>`;
                         break;
                     case 'Interests':            
                         header += `<div class="dnb-pl10 dnb-pr10 dnb-pt10 dnb-pb10">
@@ -165,7 +165,7 @@ window.onload = function(){
                                     {
                                         return `<span class="dnb-tag dnb-txt14">${e}</span>`
                                     }).join('')}
-                                   </div>`
+                                   </div>`;
                         break;
 
                     case 'Events':
@@ -174,10 +174,10 @@ window.onload = function(){
                                     {
                                         return `<p class="dnb-v-cen">${e}</p>`
                                     }).join('')}
-                                   </div>`
+                                   </div>`;
                         break;
                     default:
-                        break;
+                        ;break;
                        };
 
                 return `<div class="dnb-shadow dnb-mb10">` 
