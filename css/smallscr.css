@@ -1,0 +1,11 @@
+aside {padding-left: 10px;}
+.dnb-flex-1,.dnb-flex-2 {flex-basis: 100%; max-width: 100%; min-width: 90%}
+.dnb-flex-1 {padding-left: 10px}
+.dnb-h-fone {display: none}
+
+@media screen and (max-width: 421px) {
+    .dnb-fr {
+        float: none; display: block;
+        text-align: right; margin-top: 20px;
+    }
+}
