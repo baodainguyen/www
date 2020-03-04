@@ -16,7 +16,7 @@ var aside = [
         img: "",
         content: "",
         listName: "Groups;My CV;My Photo",
-        listLink: "#;#;#",
+        listLink: "#a;#b;#c",
         iClass: "fa-circle-o-notch;fa-briefcase;fa-photo"
     },
     {
@@ -41,23 +41,41 @@ var aside = [
     }
 ];
 function info ({id, type, title, img, content, listName, listLink, iClass}){
-    var header = title ? `<h4 class="dnb-v-cen dnb-pt10 dnb-pb10">${title}</h4>` : (img ? `<img src="${img}" style="width: 100%; height: 300px; object-fit: cover;" alt="${type}">` : ``);
+    var header = title ? `<h4 class="dnb-v-cen dnb-pt10 dnb-pb10">${title}</h4>` : (img ? `<img src="${img}" style="width: 100%; height: 300px; object-fit: cover;" alt="${type}">` : ``),
+        ics = iClass.split(';'), icsDft;
     switch(type){
         case 'Profile':
-            header += `<hr class="dnb-mr10 dnb-ml10">`;
-            break;
+            icsDft = ['fa-pencil', 'fa-home', 'fa-birthday-cake'];
             
+            header += `<hr class="dnb-mr10 dnb-ml10">`;            
+            header += `<div class="dnb-pr10 dnb-pl10 dnb-pb10 dnb-pt10">
+                        ${listName.split(';').map(function(e, i)
+                          {                
+                            return `<p><i class="fa fa-fw ${ics[i] || icsDft[i]}"></i>${e}</p>`
+                          }).join('')}
+                    </div>`;
+            break;
+        case 'Accordion':
+            icsDft = ['fa-circle-o-notch', 'fa-briefcase', 'fa-photo'];
+            let links = listLink.split(';');
+            
+            header += `<div class="dnb-pl10 dnb-pr10 dnb-pt10 dnb-pb10">
+                        ${listName.split(';').map(function(e, i)
+                          {                
+                            return `<a class="dnb-block dnb-pb10 dnb-pt10" href="${links[i]}" target="_blank"><i class="fa fa-fw ${ics[i] || icsDft[i]}"></i>${e}</a>`
+                          }).join('')}
+                        </div>`
+            break;
+        case 'Interests':
+            
+            break;
+        default:
+            break;
            };
-    
     
     return `<div class="dnb-shadow dnb-mb10">` 
         + header 
-        + `<div class="dnb-pr10 dnb-pl10 dnb-pb10">
-          <p><i class="fa fa-fw w3-margin-right w3-text-theme fa-pencil"></i>Dev - Design</p>
-          <p><i class="fa fa-fw w3-margin-right w3-text-theme fa-home"></i>Haiduong - VN</p>
-          <p><i class="fa fa-fw w3-margin-right w3-text-theme fa-birthday-cake"></i>1st week of June</p>
-        </div>
-      </div>`
+        + `</div>`
 }
 var dnb = (function() {
     function SubMdl (parentId){ 
@@ -134,6 +152,13 @@ var dnb = (function() {
 })();
 
 window.onload = function(){
+    var xx = ``;
+    aside.forEach(function(e){
+        xx += info(e);
+        
+    });
+    document.getElementById('dnb-subs').innerHTML = xx;
+    return;
     var main = new dnb.SubModule("dnbPosts").service().get("https://script.google.com/macros/s/AKfycbynTAnIGk6SnlY_JTAifuPaEgLZj--2keXhCxkIDj079NfszXY/exec", {
         success: function(data){
             function postHTML({id, imgTitle, title, date, content, images, view, like, viewMore, html}) {
