@@ -9,7 +9,7 @@ hr {border-bottom: none; border-left: none; border-right: none; border-top: 1px 
 i {margin-right: 5px}
 a {text-decoration: none; color: inherit;}
 
-#dnb-body {margin: 0 auto; max-width: 1368px;}
+#dnb-body, footer > div {margin: 0 auto; max-width: 1368px;}
 .dnb-w100 {width: 100%;}
 .dnb-h52 {height: 52px}
 .dnb-w52 {width: 52px}
@@ -42,10 +42,12 @@ a {text-decoration: none; color: inherit;}
 .dnb-pcontent > *:not(img) {padding-left: 10px; padding-right: 10px;}
 .dnb-pcontent img {width: 100%;}
 .dnb-tag {background-color: #555;color: #fff;text-align: center;padding: 2px 8px 5px 8px;margin: 2px;display: inline-block;}
+.dnb-txt12 {font-size: 12px;}
 .dnb-txt14 {font-size: 14px;line-height: initial;}
 .dnb-txt38 {font-size: 38px}
 .dnb-txtem {font-size: 18px;text-decoration: underline;font-weight: 600;}
 .dnb-c-coban {color: #0858c9}
+.dnb-c-b9 {color: #b9b9b9}
 .dnb-pr {position: relative}
 .dnb-pa {position: absolute}
 .dnb-tr {top: 0; right: 0; margin: 5px}
