@@ -2,8 +2,9 @@ body {background-color: white; font-family: "Segoe UI",Arial,sans-serif;}
 input[type="search"] {border-width: 1px; padding: 5px 10px; width: 100%; border-left-style: none; border-top-style: none;}
 input::placeholder {color: #d6d6d6}
 input:focus {outline-width: 1px}
-h1, h2, h3, h4, h5, h6 {font-weight: 400; margin: 0}
-h4 {font-size: 20px;}
+h1, h2, h3, h4, h6 {font-weight: 400;}
+h1, h2, h3, h4,h5, h6 {margin: 0;}
+h4, h5 {font-size: 20px;}
 hr {border-bottom: none; border-left: none; border-right: none; border-top: 1px solid #eee;}
 i {margin-right: 5px}
 a {text-decoration: none; color: inherit;}
@@ -40,4 +41,11 @@ a {text-decoration: none; color: inherit;}
 .dnb-fr {float: right}
 .dnb-pcontent > *:not(img) {padding-left: 10px; padding-right: 10px;}
 .dnb-pcontent img {width: 100%;}
-.dnb-tag {background-color: #555;color: #fff;text-align: center;padding: 2px 8px 5px 8px;margin: 2px;display: inline-block;font-size: 14px;}
+.dnb-tag {background-color: #555;color: #fff;text-align: center;padding: 2px 8px 5px 8px;margin: 2px;display: inline-block;}
+.dnb-txt14 {font-size: 14px;line-height: initial;}
+.dnb-txt38 {font-size: 38px}
+.dnb-txtem {font-size: 18px;text-decoration: underline;font-weight: 600;}
+.dnb-c-coban {color: #0858c9}
+.dnb-pr {position: relative}
+.dnb-pa {position: absolute}
+.dnb-tr {top: 0; right: 0; margin: 5px}

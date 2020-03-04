@@ -72,7 +72,7 @@ function info ({id, type, title, img, content, listName, listLink, iClass}){
             header += `<div class="dnb-pl10 dnb-pr10 dnb-pt10 dnb-pb10">
                         ${listName.split(';').map(function(e)
                         {
-                            return `<span class="dnb-tag">${e}</span>`
+                            return `<span class="dnb-tag dnb-txt14">${e}</span>`
                         }).join('')}
                        </div>`
             break;
@@ -173,7 +173,7 @@ window.onload = function(){
         xx += info(e);
         
     });
-    document.getElementById('dnb-subs').innerHTML = xx;
+    document.getElementById('dnbInfo').innerHTML = xx;
     return;
     var main = new dnb.SubModule("dnbPosts").service().get("https://script.google.com/macros/s/AKfycbynTAnIGk6SnlY_JTAifuPaEgLZj--2keXhCxkIDj079NfszXY/exec", {
         success: function(data){
