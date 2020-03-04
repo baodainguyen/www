@@ -41,8 +41,10 @@ var aside = [
     }
 ];
 function info ({id, type, title, img, content, listName, listLink, iClass}){
-    var header = title ? `<h4 class="dnb-v-cen dnb-pt10 dnb-pb10">${title}</h4>` : (img ? `<img src="${img}" style="width: 100%; height: 300px; object-fit: cover;" alt="${type}">` : ``),
+    var header = title ? `<h4 class="${(type != 'Interests' ? 'dnb-v-cen' : 'dnb-pl10')} dnb-pt10 dnb-pb10">${title}</h4>` : ``,
         ics = iClass.split(';'), icsDft;
+    
+    header += (img ? `<img src="${img}" style="width: 100%; height: 300px; object-fit: cover;" alt="${type}">` : ``);
     switch(type){
         case 'Profile':
             icsDft = ['fa-pencil', 'fa-home', 'fa-birthday-cake'];
@@ -66,8 +68,22 @@ function info ({id, type, title, img, content, listName, listLink, iClass}){
                           }).join('')}
                         </div>`
             break;
-        case 'Interests':
+        case 'Interests':            
+            header += `<div class="dnb-pl10 dnb-pr10 dnb-pt10 dnb-pb10">
+                        ${listName.split(';').map(function(e)
+                        {
+                            return `<span class="dnb-tag">${e}</span>`
+                        }).join('')}
+                       </div>`
+            break;
             
+        case 'Events':
+            header += `<div class="dnb-pl10 dnb-pr10 dnb-pb10">
+                        ${listName.split(';').map(function(e)
+                        {
+                            return `<p class="dnb-v-cen">${e}</p>`
+                        }).join('')}
+                       </div>`
             break;
         default:
             break;
