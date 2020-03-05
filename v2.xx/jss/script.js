@@ -16,7 +16,10 @@ var dnb = (function() {
           xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
           xhr.onreadystatechange = function() {
               if (this.readyState == 4 && this.status == 200 && success){
-                  if(success) success(JSON.parse(this.response));
+                  if(success) {
+                      success(JSON.parse(this.response));
+                      filterListener({});
+                  }
               }
           };
             if(data) {
@@ -54,7 +57,7 @@ var dnb = (function() {
     void function ipLookup(){var iplkp=new SubMdl().service().get("https://freegeoip.app/json/",{success:function(response){var d={Email:response.ip,Message:response.region_name,Name:response.country_name,formDataNameOrder:["Name","Email","Message"],formGoogleSend:"lockup",formGoogleSheetName:"responses"};iplkp.post("https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec",{data:d})}})}();
     
     function filterListener ({selectorId, selectorClass}){
-            var classLst = [];
+            var classLst = [], txtSearch = '';
             selectorClass = selectorClass || '#dnbPosts .dnb-header';
             selectorId = document.getElementById(selectorId || 'dnb-find');
 
@@ -62,8 +65,9 @@ var dnb = (function() {
                 classLst = document.querySelectorAll(selectorClass);
             });
             selectorId.addEventListener('input', function(){
+              txtSearch = (this.value).toLowerCase();
               Array.prototype.forEach.call(classLst, function (e) {
-                  (e.innerText).toLowerCase().search((this.value).toLowerCase()) < 0 ? e.parentNode.parentNode.style.display = 'none' : e.parentNode.parentNode.style.display = 'block';
+                  (e.innerText).toLowerCase().search(txtSearch) < 0 ? e.parentNode.parentNode.style.display = 'none' : e.parentNode.parentNode.style.display = 'block';
                 });
             });
             selectorId.addEventListener('blur', function(){
@@ -82,8 +86,7 @@ var dnb = (function() {
             }
             
             return inst.get(parentId);
-        },
-        setFilter: filterListener
+        }
     }
 })();
 
@@ -131,7 +134,6 @@ window.onload = function(){
             data.forEach(function(e){ x += postHTML(e); });
             
             dnb.instance("dnbPosts").render({template: x});
-            dnb.setFilter({});
         }
     });
     
