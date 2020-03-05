@@ -67,6 +67,27 @@ var dnb = (function() {
         });
     }();
     
+    function filterListener ({selectorId, selectorClass}){
+        var classLst = [];
+        selectorClass = selectorClass || '#dnbPosts .dnb-header';
+        selectorId = document.getElementById(selectorId || 'dnb-find');
+        
+        selectorId.addEventListener('focus', function(){
+            classLst = document.querySelectorAll(selectorClass);
+        });
+        selectorId.addEventListener('input', function(){
+            console.log(this.value)
+            classLst.forEach(function(e, i){
+                console.log(e.innerText);
+            });
+        });
+        selectorId.addEventListener('blur', function(){
+            classLst.forEach(function(e){
+                console.log(e.innerText);
+            });
+        });        
+    };
+    
     return {
         instance: function(parentId){
             if(!parentId) {
