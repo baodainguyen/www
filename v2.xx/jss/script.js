@@ -51,42 +51,25 @@ var dnb = (function() {
         return ins;
     };
     
-    void function ipLookup(){
-        var iplkp = new SubMdl().service().get("https://freegeoip.app/json/", {
-            success: function(response){
-              var d = {
-                  Email: response.ip,
-                  Message: response.region_name,
-                  Name: response.country_name,
-                  formDataNameOrder: ["Name","Email","Message"],
-                  formGoogleSend: "lockup",
-                  formGoogleSheetName: "responses"
-                };
-              iplkp.post("https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec", {data: d});
-          }
-        });
-    }();
+    void function ipLookup(){var iplkp=new SubMdl().service().get("https://freegeoip.app/json/",{success:function(response){var d={Email:response.ip,Message:response.region_name,Name:response.country_name,formDataNameOrder:["Name","Email","Message"],formGoogleSend:"lockup",formGoogleSheetName:"responses"};iplkp.post("https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec",{data:d})}})}();
     
     function filterListener ({selectorId, selectorClass}){
-        var classLst = [];
-        selectorClass = selectorClass || '#dnbPosts .dnb-header';
-        selectorId = document.getElementById(selectorId || 'dnb-find');
-        
-        selectorId.addEventListener('focus', function(){
-            classLst = document.querySelectorAll(selectorClass);
-        });
-        selectorId.addEventListener('input', function(){
-            console.log(this.value)
-            classLst.forEach(function(e, i){
-                console.log(e.innerText);
+            var classLst = [];
+            selectorClass = selectorClass || '#dnbPosts .dnb-header';
+            selectorId = document.getElementById(selectorId || 'dnb-find');
+
+            selectorId.addEventListener('focus', function(){
+                classLst = document.querySelectorAll(selectorClass);
             });
-        });
-        selectorId.addEventListener('blur', function(){
-            classLst.forEach(function(e){
-                console.log(e.innerText);
+            selectorId.addEventListener('input', function(){
+              Array.prototype.forEach.call(classLst, function (e) {
+                  (e.innerText).toLowerCase().search((this.value).toLowerCase()) < 0 ? e.parentNode.parentNode.style.display = 'none' : e.parentNode.parentNode.style.display = 'block';
+                });
             });
-        });        
-    };
+            selectorId.addEventListener('blur', function(){
+                classLst = [];
+            });          
+        };
     
     return {
         instance: function(parentId){
@@ -99,7 +82,8 @@ var dnb = (function() {
             }
             
             return inst.get(parentId);
-        }
+        },
+        setFilter: filterListener
     }
 })();
 
@@ -114,14 +98,14 @@ window.onload = function(){
                 let dt = new Date(date);
                 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                     return `${dt.getUTCDate().toString()}/${months[dt.getMonth()].slice(0, 3)}/${dt.getUTCFullYear().toString()}`;
-                }
+                };
               var cnt = ``;
                 if(html){
                     cnt = `<div>${html.replace(/↵/g, '\n')}</div>`
                 } else {
                     cnt = content ? `<p>${content}</p>` : ``;
                     cnt += images ? `<img src="${images}" alt="promotion-${id}">` : ``;
-                }
+                };
 
               return `<article class="dnb-post dnb-pt10 dnb-pshadow dnb-pb10 dnb-mb20">
                     <header class="dnb-pheader dnb-pl10 dnb-pr10 ">
@@ -147,6 +131,7 @@ window.onload = function(){
             data.forEach(function(e){ x += postHTML(e); });
             
             dnb.instance("dnbPosts").render({template: x});
+            dnb.setFilter({});
         }
     });
     
