@@ -86,7 +86,8 @@ var dnb = (function() {
             }
             
             return inst.get(parentId);
-        }
+        },
+        handler: filterListener
     }
 })();
 
