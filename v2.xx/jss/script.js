@@ -70,9 +70,6 @@ var dnb = (function() {
                   (e.innerText).toLowerCase().search(txtSearch) < 0 ? e.parentNode.parentNode.style.display = 'none' : e.parentNode.parentNode.style.display = 'block';
                 });
             });
-            selectorId.addEventListener('blur', function(){
-                classLst = [];
-            });          
         };
     
     return {
