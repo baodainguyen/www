@@ -137,7 +137,6 @@ window.onload = function(){
             dnb.handler({});
         }
     });
-    
     dnb.instance("dnbInfo").service().get(getUrl("z-NAllZ6wAG7gDVAlVfvowxCN3FnkDKcf6XMMDnOyTY7THGv2V"), {
         success: function(aside){
             function info ({id, type, title, img, content, listName, listLink, iClass}){
@@ -201,4 +200,4 @@ window.onload = function(){
             dnb.instance("dnbInfo").render({template: xx});
         }
     });
-};function getUrl(key){let base = 'https://script.google.com', path = {macro: '/macros/s/', pre: 'AKfycb', exec: '/exec'};if(key) {return base + path.macro + path.pre + key + path.exec;} else {return base;}}
+};function getUrl(key){let base = 'https://script.google.com', path = {pre: 'AKfycb', exec: '/exec'};if(key) {return base + '/macros/s/' + path.pre + key + path.exec;} else {return base;}}
