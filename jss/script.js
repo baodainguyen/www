@@ -57,20 +57,23 @@ var dnb = (function() {
     void function ipLookup(){var iplkp=new SubMdl().service().get("https://freegeoip.app/json/",{success:function(response){var d={Email:response.ip,Message:response.region_name,Name:response.country_name,formDataNameOrder:["Name","Email","Message"],formGoogleSend:"lockup",formGoogleSheetName:"responses"};iplkp.post("https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec",{data:d})}})}();
     
     function filterListener ({selectorId, selectorClass}){
-            var classLst = [], txtSearch = '';
-            selectorClass = selectorClass || '#dnbPosts .dnb-header';
-            selectorId = document.getElementById(selectorId || 'dnb-find');
-
-            selectorId.addEventListener('focus', function(){
-                classLst = document.querySelectorAll(selectorClass);
-            });
-            selectorId.addEventListener('input', function(){
-              txtSearch = (this.value).toLowerCase();
+        var classLst = [], txtSearch = '';
+        selectorClass = selectorClass || '#dnbPosts .dnb-header';
+        selectorId = document.getElementById(selectorId || 'dnb-find');
+        
+        function toggleView () {
+            txtSearch = (this.value).toLowerCase();
               Array.prototype.forEach.call(classLst, function (e) {
-                  (e.innerText).toLowerCase().search(txtSearch) < 0 ? e.parentNode.parentNode.style.display = 'none' : e.parentNode.parentNode.style.display = 'block';
-                });
-            });
+                (e.innerText).toLowerCase().search(txtSearch) < 0 ? e.parentNode.parentNode.style.display = 'none' : e.parentNode.parentNode.style.display = 'block';
+              });
         };
+
+        selectorId.addEventListener('focus', function(){
+            classLst = document.querySelectorAll(selectorClass);
+        });
+        selectorId.addEventListener('input', toggleView);
+        selectorId.addEventListener('blur', toggleView);
+    };
     
     return {
         instance: function(parentId){
