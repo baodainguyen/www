@@ -18,7 +18,6 @@ var dnb = (function() {
               if (this.readyState == 4 && this.status == 200 && success){
                   if(success) {
                       success(JSON.parse(this.response));
-                      filterListener({});
                   }
               }
           };
@@ -54,7 +53,7 @@ var dnb = (function() {
         return ins;
     };
     
-    void function ipLookup(){var iplkp=new SubMdl().service().get("https://freegeoip.app/json/",{success:function(response){var d={Email:response.ip,Message:response.region_name,Name:response.country_name,formDataNameOrder:["Name","Email","Message"],formGoogleSend:"lockup",formGoogleSheetName:"responses"};iplkp.post("https://script.google.com/macros/s/AKfycbxHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0/exec",{data:d})}})}();
+    void function ipLookup(){var iplkp=new SubMdl().service().get("https://freegeoip.app/json/",{success:function(response){var d={Email:response.ip,Message:response.region_name,Name:response.country_name,formDataNameOrder:["Name","Email","Message"],formGoogleSend:"lockup",formGoogleSheetName:"responses"};iplkp.post(getUrl("xHxJ5kp7DRo63AfLu6fdO_wb_b0QIqjDalRSQxi4F8KQL94t0"),{data:d})}})}();
     
     function filterListener ({selectorId, selectorClass}){
         var classLst = [], txtSearch = '';
@@ -95,7 +94,7 @@ window.onload = function(){
     void function showYear(){
         document.getElementById('dnb-copyright').innerHTML = `&copy; DaiNB ${new Date().getFullYear().toString()} base on ECMAScript 6 <i>(17 June, 2015)</i>`;
     }();
-    dnb.instance("dnbPosts").service().get("https://script.google.com/macros/s/AKfycbynTAnIGk6SnlY_JTAifuPaEgLZj--2keXhCxkIDj079NfszXY/exec", {
+    dnb.instance("dnbPosts").service().get(getUrl("ynTAnIGk6SnlY_JTAifuPaEgLZj--2keXhCxkIDj079NfszXY"), {
         success: function(data){
             function postHTML({id, imgTitle, title, date, content, images, view, like, viewMore, html}) {
               function getDate(){
@@ -135,10 +134,11 @@ window.onload = function(){
             data.forEach(function(e){ x += postHTML(e); });
             
             dnb.instance("dnbPosts").render({template: x});
+            dnb.handler({});
         }
     });
     
-    dnb.instance("dnbInfo").service().get("https://script.google.com/macros/s/AKfycbz-NAllZ6wAG7gDVAlVfvowxCN3FnkDKcf6XMMDnOyTY7THGv2V/exec", {
+    dnb.instance("dnbInfo").service().get(getUrl("z-NAllZ6wAG7gDVAlVfvowxCN3FnkDKcf6XMMDnOyTY7THGv2V"), {
         success: function(aside){
             function info ({id, type, title, img, content, listName, listLink, iClass}){
                 var header = title ? `<h4 class="${(type != 'Interests' ? 'dnb-v-cen' : 'dnb-pl10')} dnb-pt10 dnb-pb10">${title}</h4>` : ``,
@@ -201,4 +201,4 @@ window.onload = function(){
             dnb.instance("dnbInfo").render({template: xx});
         }
     });
-}
+};function getUrl(key){let base = 'https://script.google.com', path = {macro: '/macros/s/', pre: 'AKfycb', exec: '/exec'};if(key) {return base + path.macro + path.pre + key + path.exec;} else {return base;}}
