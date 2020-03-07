@@ -124,7 +124,7 @@ window.onload = function(){
                         <span class="dnb-pr10"><i class="fa fa-eye"></i>${view}</span>
                         <span class="dnb-pr10 dnb-pl10"><i class="fa fa-thumbs-up"></i>${like}</span>
                         <span class="dnb-pl10"><i class="fa fa-calendar-check-o"></i>${getDate(date)}</span>
-                        <a class="dnb-fr dnb-pr10" href="${viewMore}" target="_blank">View more<span class="fa fa-angle-double-right dnb-pl10"></span></a>
+                        ${viewMore ? `<a class="dnb-fr dnb-pr10" href="${viewMore}" target="_blank">View more<span class="fa fa-angle-double-right dnb-pl10"></span></a>` : ``}                        
                       </footer>
                     </section>
                   </article>`
