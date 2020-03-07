@@ -1,9 +1,9 @@
 # Technical
 1. html/css3
 2. ECMAScript 6 (ES2015) and beyond
-2.1. Template literals (Template strings)
-2.1. [Design pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
-2.3. XMLHttpRequest (post/get data to/from virtual server)
+* Template literals (Template strings)
+* [Design pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+* XMLHttpRequest (post/get data to/from virtual server)
 3. Google macro (generate doc/spreadsheets file to string) - like virtual server
 
 ### www Version 1.1.0 - 05/Aug/2019;
