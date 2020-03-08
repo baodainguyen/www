@@ -11,5 +11,5 @@
 ### www Version 2.0   - 05/Mar/2020;
 ## www Version 2.1   - 06/Mar/2020;
 ```
-view_docs_g_c/spreadsheets/d/1kxRfCtUrWEeoVtlavw__sRfHs6RNhW-f6Jmc2zkjgz0/edit?usp=sharing
+view/docs/g.c/spreadsheets/d/1kxRfCtUrWEeoVtlavw__sRfHs6RNhW-f6Jmc2zkjgz0/edit?usp=sharing
 ```
